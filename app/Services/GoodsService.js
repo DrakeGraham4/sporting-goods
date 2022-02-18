@@ -32,8 +32,10 @@ class GoodsService {
         } else {
             ProxyState.cart = ProxyState.cart.filter(i => i.id != id)
         }
-
+        let returnItem = ProxyState.items.find(i => id == i.id)
+        returnItem.quantity += 1
         ProxyState.cart = ProxyState.cart
+        ProxyState.items = ProxyState.items
     }
 }
 
